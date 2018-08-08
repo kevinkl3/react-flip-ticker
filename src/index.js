@@ -69,8 +69,13 @@ const measureHeight = (className, value) => {
 };
 
 class Ticker extends Component {
-  state = {
-    height: measureHeight(this.props.textClassName, "0")
+
+  constructor(props){
+    super(props);
+    
+    this.state = {
+      height: this.props.height || measureHeight(this.props.textClassName, "0")
+    }
   }
 
   render() {
